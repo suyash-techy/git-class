@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Shopping Profile UI</title>
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    body{
+      background:#f4f4f4;
+      color:#333;
+    }
+
+    /* Navbar */
+    .navbar{
+      width:100%;
+      background:#111;
+      color:white;
+      padding:15px 40px;
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+    }
+
+    .logo{
+      font-size:28px;
+      font-weight:bold;
+      color:#ff9800;
+    }
+
+    .nav-links a{
+      color:white;
+      text-decoration:none;
+      margin-left:20px;
+      transition:0.3s;
+    }
+
+    .nav-links a:hover{
+      color:#ff9800;
+    }
+
+    /* Main Container */
+    .container{
+      display:flex;
+      gap:25px;
+      padding:40px;
+    }
+
+    /* Profile Card */
+    .profile-card{
+      width:300px;
+      background:white;
+      border-radius:15px;
+      padding:25px;
+      text-align:center;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .profile-card img{
+      width:120px;
+      height:120px;
+      border-radius:50%;
+      object-fit:cover;
+      margin-bottom:15px;
+      border:4px solid #ff9800;
+    }
+
+    .profile-card h2{
+      margin-bottom:5px;
+    }
+
+    .profile-card p{
+      color:gray;
+      margin-bottom:20px;
+    }
+
+    .profile-btn{
+      background:#ff9800;
+      color:white;
+      border:none;
+      padding:10px 20px;
+      border-radius:8px;
+      cursor:pointer;
+      transition:0.3s;
+    }
+
+    .profile-btn:hover{
+      background:#e68900;
+    }
+
+    /* Right Section */
+    .content{
+      flex:1;
+    }
+
+    .section{
+      background:white;
+      padding:25px;
+      border-radius:15px;
+      margin-bottom:25px;
+      box-shadow:0 5px 15px rgba(0,0,0,0.1);
+    }
+
+    .section h3{
+      margin-bottom:20px;
+      color:#111;
+    }
+
+    /* Orders */
+    .order{
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 0;
+      border-bottom:1px solid #ddd;
+    }
+
+    .order:last-child{
+      border-bottom:none;
+    }
+
+    .order img{
+      width:70px;
+      border-radius:10px;
+    }
+
+    .order-details{
+      flex:1;
+      margin-left:15px;
+    }
+
+    .status{
+      background:#4caf50;
+      color:white;
+      padding:5px 12px;
+      border-radius:20px;
+      font-size:14px;
+    }
+
+    /* Wishlist */
+    .wishlist{
+      display:grid;
+      grid-template-columns:repeat(auto-fit, minmax(180px,1fr));
+      gap:20px;
+    }
+
+    .product{
+      background:#fafafa;
+      border-radius:12px;
+      padding:15px;
+      text-align:center;
+      transition:0.3s;
+    }
+
+    .product:hover{
+      transform:translateY(-5px);
+    }
+
+    .product img{
+      width:100%;
+      border-radius:10px;
+      margin-bottom:10px;
+    }
+
+    .price{
+      color:#ff9800;
+      font-weight:bold;
+      margin-top:8px;
+    }
+
+    @media(max-width:900px){
+      .container{
+        flex-direction:column;
+      }
+
+      .profile-card{
+        width:100%;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <div class="navbar">
+    <div class="logo">ShopZone</div>
+
+    <div class="nav-links">
+      <a href="#">Home</a>
+      <a href="#">Products</a>
+      <a href="#">Cart</a>
+      <a href="#">Profile</a>
+    </div>
+  </div>
+
+  <!-- Main Section -->
+  <div class="container">
+
+    <!-- Profile -->
+    <div class="profile-card">
+      <img src="https://i.pravatar.cc/300" alt="Profile">
+      <h2>Suyash Mishra</h2>
+      <p>Premium Customer</p>
+
+      <button class="profile-btn">Edit Profile</button>
+    </div>
+
+    <!-- Content -->
+    <div class="content">
+
+      <!-- Orders -->
+      <div class="section">
+        <h3>Recent Orders</h3>
+
+        <div class="order">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=400" alt="">
+          
+          <div class="order-details">
+            <h4>Nike Shoes</h4>
+            <p>Order ID: #14562</p>
+          </div>
+
+          <span class="status">Delivered</span>
+        </div>
+
+        <div class="order">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=400" alt="">
+          
+          <div class="order-details">
+            <h4>Smart Watch</h4>
+            <p>Order ID: #14589</p>
+          </div>
+
+          <span class="status">Shipped</span>
+        </div>
+      </div>
+
+      <!-- Wishlist -->
+      <div class="section">
+        <h3>Wishlist</h3>
+
+        <div class="wishlist">
+
+          <div class="product">
+            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=400" alt="">
+            <h4>iPhone</h4>
+            <div class="price">₹79,999</div>
+          </div>
+
+          <div class="product">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=400" alt="">
+            <h4>Headphones</h4>
+            <div class="price">₹4,999</div>
+          </div>
+
+          <div class="product">
+            <img src="https://images.unsplash.com/photo-1546868871-7041f2a55e12?w=400" alt="">
+            <h4>Apple Watch</h4>
+            <div class="price">₹29,999</div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+</body>
+</html>
